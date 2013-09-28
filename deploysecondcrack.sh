@@ -61,6 +61,7 @@ if [ $1 == "apache" ] then
 sudo cp ~/deploysecondcrack/config-files/httpd.conf /etc/httpd/conf/httpd.conf;
 sudo rm /etc/httpd/conf.d/welcome.conf;
 sudo chmod o+x ~;
+service httpd restart
 else
 sudo cp ~/deploysecondcrack/config-files/nginx.conf /etc/nginx/sites-available/secondcrack.conf;
 mkdir -p /home/blog/secondcrack/logs/
