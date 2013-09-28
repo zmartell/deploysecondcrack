@@ -62,7 +62,10 @@ sudo cp ~/deploysecondcrack/config-files/httpd.conf /etc/httpd/conf/httpd.conf;
 sudo rm /etc/httpd/conf.d/welcome.conf;
 sudo chmod o+x ~;
 else
-sudo cp ~/deploysecondcrack/config-files/nginx.conf /etc/nginx/conf.d/default.conf;
+sudo cp ~/deploysecondcrack/config-files/nginx.conf /etc/nginx/sites-available/secondcrack.conf;
+cd /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/secondcrack.conf
+service nginx restart
 fi
 
 # Config PHP settings for short_open_tags
