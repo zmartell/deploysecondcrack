@@ -6,8 +6,6 @@ if [ $1 == "apache" ] then
 sudo yum install -y httpd inotify-tools php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
 sudo chkconfig  httpd on;
 else
-rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi
-rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 sudo yum install -y nginx php-fpm inotify-tools php-cli php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-magickwand php-magpierss php-mbstring php-mcrypt php-mssql php-shout php-snmp php-soap php-tidy php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
 echo 'date.timezone = "Europe/Berlin"' >> /etc/php.ini
 chkconfig --levels 235 php-fpm on
