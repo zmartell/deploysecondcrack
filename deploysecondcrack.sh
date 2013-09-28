@@ -1,10 +1,18 @@
 # Install Apache, PHP, Python, Git, and dependancies
 
+if [ $1 == "apache" ] then 
 sudo yum install -y httpd php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
-
-# Start Apache on boot 
-
 sudo chkconfig  httpd on;
+else
+rpm --import https://fedoraproject.org/static/0608B895.txt 
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi
+rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+sudo yum install -y nginx php-fpm php-cli php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-magickwand php-magpierss php-mbstring php-mcrypt php-mssql php-shout php-snmp php-soap php-tidy php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
+echo 'date.timezone = "Europe/Berlin"' >> /etc/php.ini
+chkconfig --levels 235 php-fpm on
+/etc/init.d/php-fpm start
+fi
 
 # Install inotify-tools to make updating speedy
 
@@ -49,10 +57,13 @@ sudo chmod 755 /usr/bin/dropbox;
 sudo crontab ~/deploysecondcrack/config-files/crontab.example;
 
 # Config Apache with default settings
-
+if [ $1 == "apache" ] then 
 sudo cp ~/deploysecondcrack/config-files/httpd.conf /etc/httpd/conf/httpd.conf;
 sudo rm /etc/httpd/conf.d/welcome.conf;
 sudo chmod o+x ~;
+else
+sudo cp ~/deploysecondcrack/config-files/nginx.conf /etc/nginx/conf.d/default.conf;
+fi
 
 # Config PHP settings for short_open_tags
 
