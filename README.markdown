@@ -14,11 +14,13 @@ Next switch to your new 'blog' user account with the command `su blog`.
 ### 2. Install Environment, Dropbox, Second Crack, and deploysecondcrack
 
  Paste the following command and press enter to make the magic happen. You'll be prompted for your password.
-If you want apache: 
+
+**If you want apache**: 
 
     cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh && sh deploysecondcrack.sh apache
 
-If you want nginx: 
+**If you want nginx**: 
+
     cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh && sh deploysecondcrack.sh nginx
 
 
