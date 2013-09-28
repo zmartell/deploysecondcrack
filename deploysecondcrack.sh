@@ -20,7 +20,6 @@ sudo git clone git://github.com/nickwynja/deploysecondcrack.git;
     
 wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
 sudo mkdir -p ~/Dropbox;
-sudo chown -R blog ~/Dropbox;
 sudo chmod -R u+rw,o+x ~/Dropbox;
 sudo mkdir -p ~/.dropbox;
 sudo chown -R blog ~/.dropbox;
