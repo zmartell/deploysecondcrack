@@ -7,7 +7,7 @@
 **Note:** For ease of setup, we will use the username 'blog'. Changing this to your name will break other deploy scripts.
 
 - Create the new user with the command `useradd -d /home/blog -m blog && sudo passwd blog`. Enter and confirm your password.
-- Give 'blog' sudo permissions by entering the command echo "blog ALL=(ALL) ALL" >> /etc/sudoers
+- Give 'blog' sudo permissions by entering the command echo `"blog ALL=(ALL) ALL" >> /etc/sudoers`
 
 Next switch to your new 'blog' user account with the command `su blog`.
 
