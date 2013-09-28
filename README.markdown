@@ -14,10 +14,15 @@ Next switch to your new 'blog' user account with the command `su blog`.
 ### 2. Install Environment, Dropbox, Second Crack, and deploysecondcrack
 
  Paste the following command and press enter to make the magic happen. You'll be prompted for your password.
+If you want apache: 
 
-    cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh | sh
-    
-This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take about 5 minutes to run. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack be deployed.
+    cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh && sh deploysecondcrack.sh apache
+
+If you want nginx: 
+    cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh && sh deploysecondcrack.sh nginx
+
+
+This script will install set up and install second crack. It'll take about 5 minutes to run. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack be deployed.
 
 After everything is installed, `~/secondcrack/config.php` will be displayed where you need to set `$blog_title`, `$blog_url`, and the description of your blog. You can also enter a username and password here if you plan on using the bookmarklets.
 
