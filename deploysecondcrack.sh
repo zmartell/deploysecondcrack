@@ -66,7 +66,7 @@ sudo cp ~/deploysecondcrack/config-files/php.ini /etc/php.ini;
 # Install Second Crack
 
 cd ~/ ;
-sudo git clone git://github.com/marcoarment/secondcrack.git;
+git clone git://github.com/marcoarment/secondcrack.git;
 
 # Configure Second Crack
 
