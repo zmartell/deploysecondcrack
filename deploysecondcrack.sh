@@ -63,6 +63,7 @@ sudo rm /etc/httpd/conf.d/welcome.conf;
 sudo chmod o+x ~;
 else
 sudo cp ~/deploysecondcrack/config-files/nginx.conf /etc/nginx/sites-available/secondcrack.conf;
+mkdir -p /home/blog/secondcrack/logs/
 cd /etc/nginx/sites-enabled/
 ln -s /etc/nginx/sites-available/secondcrack.conf
 service nginx restart
