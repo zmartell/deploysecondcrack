@@ -17,12 +17,11 @@ wget --no-check-certificate http://github.com/downloads/rvoicilas/inotify-tools/
 
 # Install deploysecondcrack
 
-cd ~;
 sudo git clone git://github.com/nickwynja/deploysecondcrack.git;
 
 # Install Dropbox
     
-cd ~ && wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
+wget -O - http://www.dropbox.com/download?plat=lnx.x86_64 | tar xzf -
 sudo mkdir -p ~/Dropbox;
 sudo chown -R blog ~/Dropbox;
 sudo chmod -R u+rw ~/Dropbox;
