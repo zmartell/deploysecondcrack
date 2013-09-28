@@ -7,7 +7,7 @@
 **Note:** For ease of setup, we will use the username 'blog'. Changing this to your name will break other deploy scripts.
 
 - Create the new user with the command `useradd -d /home/blog -m blog && sudo passwd blog`. Enter and confirm your password.
-- Give 'blog' sudo permissions by entering the command `visudo`. On line 90 (jump to the line by typing `:90`), hit `i` to go into insert mode and add `blog    ALL=(ALL)    ALL`. Exit out of vi by pressing `esc` then type `:wq` and press enter to save and quit. 
+- Give 'blog' sudo permissions by entering the command echo "blog ALL=(ALL) ALL" >> /etc/sudoers
 
 Next switch to your new 'blog' user account with the command `su blog`.
 
@@ -15,7 +15,7 @@ Next switch to your new 'blog' user account with the command `su blog`.
 
  Paste the following command and press enter to make the magic happen. You'll be prompted for your password.
 
-    cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh; . ~/deploysecondcrack.sh
+    cd ~ && wget https://raw.github.com/nickwynja/deploysecondcrack/master/deploysecondcrack.sh | sh
     
 This script will install `httpd`, `php`, `git`, `inotify-tools` and update/install other dependancies. It'll take about 5 minutes to run. Dropbox, the Dropbox CLI, a Dropbox `/etc/init.d/` service, Second Crack be deployed.
 
