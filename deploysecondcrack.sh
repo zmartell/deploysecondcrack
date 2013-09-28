@@ -1,7 +1,7 @@
-# Install Apache, PHP, Python, Git, and dependancies
+# Install repositories
 rpm --import https://fedoraproject.org/static/0608B895.txt 
 rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-
+#Install Apache/NGINX and then set it to startup at boot
 if [ $1 == "apache" ] then 
 sudo yum install -y httpd inotify-tools php php-process python git gcc automake autoconf libtool make curl-devel libgcc.i686 glibc.i686 php-xml php-mbstring;
 sudo chkconfig  httpd on;
